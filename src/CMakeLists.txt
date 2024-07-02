@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(kits)
+
+set(SOURCES 
+    main.cpp
+)
+
+
+add_executable(kits ${SOURCES})
+
+target_include_directories(kits
+    PRIVATE 
+        ${PROJECT_SOURCE_DIR}/include
+)
