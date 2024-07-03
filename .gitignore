@@ -83,3 +83,7 @@ build
 
 # executable
 max-number-neighborhood
+
+# files for test purpose
+document.txt
+kit.txt

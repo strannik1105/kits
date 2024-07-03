@@ -6,6 +6,7 @@ set(SOURCES
     main.cpp
     common/document_reader.cpp
     common/txt_document_reader.cpp
+    kits/kit.cpp
 )
 
 
