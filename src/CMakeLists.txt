@@ -7,6 +7,7 @@ set(SOURCES
     common/document_reader.cpp
     common/txt_document_reader.cpp
     kits/kit.cpp
+    kits/kits_finder.cpp
     kits/receipt.cpp
 )
 

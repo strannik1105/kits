@@ -15,6 +15,7 @@ namespace Kits
             std::map<std::string, std::vector<int>> catalog_n_count;
         public:
             Receipt(DocumentReader::ReaderResult readed_doc);
+            std::map<std::string, std::vector<int>> get_records();
     };
 };
 

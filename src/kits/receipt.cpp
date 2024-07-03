@@ -33,7 +33,6 @@ Kits::Receipt::Receipt(DocumentReader::ReaderResult readed_doc)
             {
                 std::vector<int> items;
 
-
                 this->catalog_n_count.insert(
                         {
                             *j,
@@ -43,11 +42,16 @@ Kits::Receipt::Receipt(DocumentReader::ReaderResult readed_doc)
             } 
             
             size_t count_i = std::strtol((*counts)[i].c_str(), NULL, 10);
-            int  positions_i = std::strtol((*positions)[i].c_str(), NULL, 10);
+            int positions_i = std::strtol((*positions)[i].c_str(), NULL, 10);
             for(int k = 0; k < count_i; k++)
             {
                 this->catalog_n_count[*j].push_back(positions_i);
             }
         }
     }
+}
+
+std::map<std::string, std::vector<int>> Kits::Receipt::get_records()
+{
+    return this->catalog_n_count;
 }
