@@ -1,8 +1,8 @@
 #ifndef KIT_H
 #define KIT_H
 
-#include <map>
 #include <string>
+#include <vector>
 
 #include "common/document_reader.h"
 
@@ -12,9 +12,10 @@ namespace Kits
     class Kit
     {
         private:
-            std::map<std::string, int> catalog_n_count;
+            std::vector<std::pair<std::string, int>> catalog_n_count;
         public:
             Kit(DocumentReader::ReaderResult readed_doc);
+            std::vector<std::pair<std::string, int>> get_catalogs_count();
     };
 };
 

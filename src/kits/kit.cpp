@@ -11,11 +11,16 @@ Kits::Kit::Kit(DocumentReader::ReaderResult readed_doc)
     for(size_t i = 0; i < (*catalogs).size(); i++)
     {
         size_t i_count = std::strtol((*catalogs_values)[i].c_str(), NULL, 10);
-        this->catalog_n_count.insert(
+        this->catalog_n_count.push_back(
                 {
                     (*catalogs)[i],
                     i_count,
                 }
             );
     }
+}
+
+std::vector<std::pair<std::string, int>> Kits::Kit::get_catalogs_count()
+{
+    return this->catalog_n_count;
 }
