@@ -30,20 +30,27 @@ std::shared_ptr<DocumentReader::ReaderResult> DocumentReader::TxtDocumentReader:
         {
             return reader_result;
         }
-        std::stringstream ss(headers_line);
+        std::stringstream headers_stream(headers_line);
         std::string header;
         int headers_count = 0;
+        std::map<int, std::string> header_mapper;
 
-        while(ss >> header)
+        while(headers_stream >> header)
         {
-            std::cout << header << std::endl;
-            
-            headers_count++;
+            reader_result->append_column(header);   
+            header_mapper.insert({++headers_count, header});
         }
 
         while (std::getline(this->input_stream, line))
         {
-            std::cout << line << std::endl;
+            std::stringstream line_stream(line);
+            std::string word;
+            int column_cur = 0;
+
+            while(line_stream >> word)
+            {
+                reader_result->append_value_by_column(header_mapper[++column_cur], word);
+            }
         }
     }
 
