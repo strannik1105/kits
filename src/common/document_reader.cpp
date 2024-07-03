@@ -1,5 +1,3 @@
-#include <string>
-
 #include "common/document_reader.h"
 
 using DocumentReader::Column_t;

@@ -1,6 +1,4 @@
-#include <iostream>
 #include <sstream>
-#include <string>
 
 #include "common/txt_document_reader.h"
 
