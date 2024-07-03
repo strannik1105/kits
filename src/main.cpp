@@ -8,11 +8,21 @@
 
 using namespace DocumentReader;
 using namespace Kits;
-using namespace std;
 
 
-int main()
+int main(const int argc, const char *argv[])
 { 
+  if(argc < 2)
+  {
+    std::cout << "Слишком мало аргументов\n";
+    return 0;
+  }
+  else if(argc > 3)
+  {
+    std::cout << "Слишком много аргументов\n";
+    return 0;
+  }
+
   auto kits_reader = std::make_shared<TxtDocumentReader>("kit.txt");
   auto kit = Kit(*kits_reader->read());
 
